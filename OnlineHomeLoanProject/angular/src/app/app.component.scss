@@ -1,0 +1,159 @@
+.Header-Menu {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(195, 214, 214);
+  .first-Section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    .Logo-Info {
+      display: flex;
+      flex-direction: row;
+      width: 66%;
+      height: 80px;
+      align-items: center;
+      .Logo-Text {
+        width: 50%;
+        font-size: 25px;
+        font-style: italic;
+        font-weight: bold;
+      }
+      .logo-Image {
+        width: 50%;
+        height: 100%;
+        background-color: rgb(195, 214, 214);
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .user-Buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 18px;
+      button {
+        padding: 6px 15px 6px 15px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        color: rgb(240, 237, 231);
+        background-color: rgb(105, 114, 121);
+      }
+    }
+  }
+  .second-Section {
+    padding: 15px 0px 0px 0px;
+    background-color: rgb(165, 190, 190);
+    .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+      color: #fff;
+      font-weight: bold;
+      background-color: #744365;
+    }
+    .menu-List {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        color: rgb(57, 63, 46);
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+.Footer-Layer {
+  background-color: rgb(165, 190, 190);
+  display: flex;
+  flex-direction: column;
+  padding-top: 18px;
+  .first-Layer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 60px 0px 60px;
+    .quick-Links {
+      display: flex;
+      flex-direction: column;
+      .footer-Title {
+        font-size: 17px;
+        font-weight: bold;
+      }
+      .content-Text {
+        text-decoration: underline;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    }
+    .socialMedia-Info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      .connect-Text {
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .social-icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        font-size: 17px;
+      }
+    }
+  }
+  .second-Layer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 15px;
+      font-weight: bolder;
+    }
+    .playStore {
+      width: 11%;
+      height: 6%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .appStore {
+      width: 9%;
+      height: 4%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.userLogin-Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: rgb(215, 215, 240);
+  padding: 15px 60px 0px 0px;
+  button {
+    font-size: 18px;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    color: rgb(75, 70, 9);
+    padding: 3px 15px 3px 15px;
+    border-radius: 8px;
+  }
+}

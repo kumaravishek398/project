@@ -1,0 +1,260 @@
+<div class="customerLayer">
+    <div class="customer-Header">
+        <div class="logo-Display">
+            <img src="assets/images/OHL.svg" alt="img">
+        </div>
+        <div class="customer-Logout">
+            <span>Hello <span class="customer-Text">{{displayUser}}</span> !</span>
+            <button (click)="logOut()">LOGOUT</button>
+        </div>
+    </div>
+    <div class="applicationForm-Layer">
+        <span class="appl-Mainhead">Loan Application</span>
+        <form [formGroup]="customerForm" (ngSubmit)="customerSubmitted()" class="form-LayerData">
+            <div class="form-Section">
+                <span class="form-HeadText">Income Details</span>
+                <div class="income-Data">
+                    <div class="Radio-Fetchinfo">
+                        <span>Employment Type<span class="mandate">&nbsp;*</span> :</span>
+                        <div class="radio-Button">
+                            <div>
+                                <input type="radio" name="employment" value="salaried" formControlName="employment">
+                                <label>Salaried</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="employment" value="selfemployed" formControlName="employment">
+                                <label>Self Employed</label>
+                            </div>
+                            <span class="Mandate-Text" *ngIf="Employement.errors?.['required']">
+                                Please select employement
+                            </span>
+                        </div>
+                    </div>
+                    <div class="Radio-Fetchinfo">
+                        <span>Organization Type<span class="mandate">&nbsp;*</span> :</span>
+                        <div class="radio-Button">
+                            <div>
+                                <input type="radio" name="organization" value="private" formControlName="organization">
+                                <label>Private</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="organization" value="government"
+                                    formControlName="organization">
+                                <label>Government</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="organization" value="none" formControlName="organization">
+                                <label>None</label>
+                            </div>
+                            <span class="Mandate-Text" *ngIf="Organization.errors?.['required']">
+                                Please select organization
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Monthly Income<span class="mandate">&nbsp;*</span> :</span>
+                        <input formControlName="monthlyincome" />
+                        <span class="error-Text"
+                            *ngIf="MonthlyIncome.errors?.['required'] && (MonthlyIncome.touched || MonthlyIncome.dirty)">
+                            monthly income is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="MonthlyIncome.errors?.['pattern'] && (MonthlyIncome.touched || MonthlyIncome.dirty)">
+                            please enter numbers only
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="MonthlyIncome.errors?.['minlength'] || MonthlyIncome.errors?.['maxlength'] && (MonthlyIncome.touched || MonthlyIncome.dirty)">
+                            income is not valid
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="form-Section">
+                <span class="form-HeadText">Loan Against Property</span>
+                <div class="income-Data">
+                    <div class="form-incomeDetials">
+                        <span>Property Type (house, land, shop etc.) :</span>
+                        <input />
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Property Loation :</span>
+                        <input />
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Property Estimated Value :</span>
+                        <input />
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="form-Section">
+                <span class="form-HeadText">Loan Details</span>
+                <div class="income-Data">
+                    <div class="form-incomeDetials">
+                        <span>Loan Amount<span class="mandate">&nbsp;*</span> :</span>
+                        <input formControlName="loanamount" />
+                        <span class="error-Text"
+                            *ngIf="LoanAmount.errors?.['required'] && (LoanAmount.touched || LoanAmount.dirty)">
+                            loan amount is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="LoanAmount.errors?.['minlength'] || LoanAmount.errors?.['maxlength'] && (LoanAmount.touched || LoanAmount.dirty)">
+                            please enter valid amount
+                        </span>
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Interest Rate = 8.2 %</span>
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Tenure<span class="mandate">&nbsp;*</span> : (in years)</span>
+                        <input formControlName="tenure" />
+                        <span class="error-Text"
+                            *ngIf="Tenure.errors?.['required'] && (Tenure.touched || Tenure.dirty)">
+                            loan amount is required
+                        </span>
+                        <span class="error-Text" *ngIf="Tenure.errors?.['pattern'] && (Tenure.touched || Tenure.dirty)">
+                            tenure should be 1 to 20 years
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="form-Section">
+                <span class="form-HeadText">Personal Details</span>
+                <div class="income-Data">
+                    <div class="form-incomeDetials">
+                        <span>Firstname<span class="mandate">&nbsp;*</span> :</span>
+                        <input formControlName="firstname" />
+                        <span class="error-Text"
+                            *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)">
+                            firstname is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="FirstName.errors?.['pattern'] && (FirstName.touched || FirstName.dirty)">
+                            please enter letters only
+                        </span>
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Middlename :</span>
+                        <input />
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Lastname<span class="mandate">&nbsp;*</span> :</span>
+                        <input formControlName="lastname" />
+                        <span class="error-Text"
+                            *ngIf="LastName.errors?.['required'] && (LastName.touched || LastName.dirty)">
+                            lastname is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="LastName.errors?.['pattern'] && (LastName.touched || LastName.dirty)">
+                            please enter letters only
+                        </span>
+                    </div>
+                    <div class="Radio-Fetchinfo">
+                        <span>Gender<span class="mandate">&nbsp;*</span> :</span>
+                        <div class="radio-Button">
+                            <div>
+                                <input type="radio" name="gender" value="male" formControlName="gender">
+                                <label>Male</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="gender" value="female" formControlName="gender">
+                                <label>Female</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="gender" value="other" formControlName="gender">
+                                <label>Other</label>
+                            </div>
+                            <span class="Mandate-Text" *ngIf="Gender.errors?.['required']">
+                                Please select gender
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Date of Birth<span class="mandate">&nbsp;*</span> :</span>
+                        <input type="date" formControlName="dob" />
+                        <span class="error-Text"
+                            *ngIf="DateOfBirth.errors?.['required'] && (DateOfBirth.touched || DateOfBirth.dirty)">
+                            date of birth is required
+                        </span>
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Mobile Number<span class="mandate">&nbsp;*</span> :</span>
+                        <input formControlName="mobilenumber" />
+                        <span class="error-Text"
+                            *ngIf="MobileNumber.errors?.['required'] && (MobileNumber.touched || MobileNumber.dirty)">
+                            mobile number is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="MobileNumber.errors?.['pattern'] && (MobileNumber.touched || MobileNumber.dirty)">
+                            please enter numbers only
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="MobileNumber.errors?.['minlength'] || MobileNumber.errors?.['maxlength'] && (MobileNumber.touched || MobileNumber.dirty)">
+                            phone number not valid
+                        </span>
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Adhaar Number<span class="mandate">&nbsp;*</span> :</span>
+                        <input formControlName="adhaar" />
+                        <span class="error-Text"
+                            *ngIf="Adhaar.errors?.['required'] && (Adhaar.touched || Adhaar.dirty)">
+                            adhaar is required
+                        </span>
+                        <span class="error-Text" *ngIf="Adhaar.errors?.['pattern'] && (Adhaar.touched || Adhaar.dirty)">
+                            please enter numbers only
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="Adhaar.errors?.['minlength'] || Adhaar.errors?.['maxlength'] && (Adhaar.touched || Adhaar.dirty)">
+                            adhaar not valid
+                        </span>
+                    </div>
+                    <div class="form-incomeDetials">
+                        <span>Pan Number<span class="mandate">&nbsp;*</span> :</span>
+                        <input formControlName="pan" />
+                        <span class="error-Text" *ngIf="Pan.errors?.['required'] && (Pan.touched || Pan.dirty)">
+                            pan is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="Pan.errors?.['minlength'] || Pan.errors?.['maxlength'] && (Pan.touched || Pan.dirty)">
+                            PAN not valid
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="file-Section">
+                <span class="fs-Heading">Upload Documents :</span>
+                <div class="fs-Data">
+                    <div class="fileUpload-info">
+                        <span>Adhaar<span class="mandate">&nbsp;*</span></span>
+                        <input type="file" />
+                    </div>
+                    <div class="fileUpload-info">
+                        <span>PAN<span class="mandate">&nbsp;*</span></span>
+                        <input type="file" />
+                    </div>
+                    <div class="fileUpload-info">
+                        <span>Payslips<span class="mandate">&nbsp;*</span> (Latest 6 months)</span>
+                        <input type="file" />
+                    </div>
+                    <div class="fileUpload-info">
+                        <span>Bank Statement<span class="mandate">&nbsp;*</span> (Latest 1 year)</span>
+                        <input type="file" />
+                    </div>
+                    <div class="fileUpload-info">
+                        <span>Form 16 A & B<span class="mandate">&nbsp;*</span> (Latest 2 years)</span>
+                        <input type="file" />
+                    </div>
+                </div>
+            </div>
+            <div class="Submit-Btn">
+                <button type="submit" [disabled]="customerForm.invalid" (click)="alertWithSuccess()">Submit</button>
+            </div>
+        </form>
+        <div class="apl-Message" [ngClass]="isApplicationCreated? 'text-success pb-1':'text-danger pb-1'">
+            {{DisplayText}}
+        </div>
+    </div>
+</div>

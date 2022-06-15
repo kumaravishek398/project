@@ -1,0 +1,71 @@
+<div class="Header-Menu container-fluid" *ngIf="authService.isLoggedIn()==false">
+  <div class="first-Section">
+    <div class="Logo-Info">
+      <span class="Logo-Text">Online Housing Loan</span>
+      <div class="logo-Image">
+        <img src="../assets/images/OHL.svg" alt="img" />
+      </div>
+    </div>
+    <div class="user-Buttons">
+      <button routerLink="/login">Login</button>
+      <button routerLink="/register">Signup</button>
+    </div>
+  </div>
+  <div class="second-Section">
+    <ul class="nav nav-pills menu-List" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="pill" routerLink="/home"><i class="fa fa-home"></i>Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" routerLink="/about"><i class="fa fa-institution"></i>About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" routerLink="/features"><i class="fa fa-bar-chart-o"></i>Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" routerLink="/calculator"><i class="fa fa-calculator"></i>Emi
+          Calculator</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" routerLink="/faq"><i class="fa fa-question-circle"></i>FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" routerLink="/contactus"><i class="fa fa-address-card-o"></i>Contact
+          Us</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="userLogin-Header" *ngIf="authService.isActive()">
+  <button routerLink="/loantracking">loan tracking</button>
+</div>
+<router-outlet></router-outlet>
+<div class="Footer-Layer">
+  <div class="first-Layer">
+    <div class="quick-Links">
+      <span class="footer-Title">Quick Links</span>
+      <span class="content-Text" routerLink="about">About</span>
+      <span class="content-Text" routerLink="contactus">Contact Us</span>
+      <span class="content-Text" routerLink="calculator">Calculator</span>
+    </div>
+    <div class="socialMedia-Info">
+      <span class="connect-Text">CONNECT WITH US</span>
+      <div class="social-icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-youtube"></i>
+      </div>
+    </div>
+  </div>
+  <div class="second-Layer">
+    <span>GET OHL APP</span>
+    <div class="playStore">
+      <img src="../assets/images/playStore.svg" alt="img" />
+    </div>
+    <div class="appStore">
+      <img src="../assets/images/appStore.svg" alt="img" />
+    </div>
+  </div>
+</div>

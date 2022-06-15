@@ -1,0 +1,60 @@
+.customer-Header {
+  background-color: rgb(215, 215, 240);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .logo-Display {
+    width: 20%;
+    height: 80px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .customer-Logout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding-right: 50px;
+    span {
+      font-style: oblique;
+      .customer-Text {
+        font-weight: bold;
+      }
+    }
+    button {
+      border: none;
+      outline: none;
+      border-radius: 6px;
+      font-size: 12px;
+      padding: 4px 12px 4px 12px;
+      background-color: rgb(4, 92, 87);
+      color: rgb(219, 212, 212);
+      font-weight: bold;
+    }
+  }
+}
+
+.redirect-Text {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(70, 19, 104);
+  font-weight: bold;
+  padding: 25px 0px 20px 50px;
+}
+
+.tracking-Layer {
+  background-color: rgb(168, 156, 145);
+  width: 60%;
+  margin: 30px auto 60px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px 25px 0px;
+  gap: 25px;
+  .Heading {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,67 @@
+.userRegister-Layout {
+  padding-top: 80px;
+  background-image: url("../register/images/registerDisplay.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 750px;
+  .heading-Title {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 15px;
+    font-weight: bold;
+  }
+  .register-Layer {
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    border-radius: 6px;
+    padding: 15px 0px 15px 0px;
+    .accountMessage {
+      margin: auto;
+      text-align: center;
+      padding: 3px 0px 8px 0px;
+    }
+    .register-Form {
+      width: 85%;
+      border-radius: 6px;
+      background-color: rgb(233, 241, 241);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: auto;
+      .error-Text {
+        font-size: 14px;
+        color: red;
+      }
+      .Name-Data {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .firstName {
+          display: flex;
+          flex-direction: column;
+          width: 46%;
+        }
+        .lastName {
+          display: flex;
+          flex-direction: column;
+          width: 46%;
+        }
+      }
+      .signup-Layer {
+        display: flex;
+        flex-direction: column;
+      }
+      .Submit-Data {
+        margin: 25px auto auto auto;
+        width: 35%;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: rgb(102, 102, 116);
+        padding: 4px 0px 4px 0px;
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<div class="Login-Layer">
+    <ul class="nav nav-tabs role-Layer" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#user">User</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#admin">Admin</a>
+        </li>
+    </ul>
+    <div class="tab-content form-Layer">
+        <div id="user" class="container tab-pane active"><br>
+            <form [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+                <div class="form-Data">
+                    <div class="username-Info">
+                        <span>Username</span>
+                        <input formControlName="email" />
+                        <span class="error-Text" *ngIf="Email.errors?.['required'] && (Email.dirty||Email.touched)">
+                            username is required
+                        </span>
+                        <span class="error-Text" *ngIf="Email.errors?.['email'] && (Email.dirty||Email.touched)">
+                            username is invalid
+                        </span>
+                    </div>
+                    <div class="password-Info">
+                        <span>Password</span>
+                        <input type="password" formControlName="password" />
+                        <span class="error-Text"
+                            *ngIf="Password.errors?.['required'] && (Password.dirty||Password.touched)">
+                            password is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.dirty||Password.touched)">
+                            password is not valid
+                        </span>
+                    </div>
+                    <button class="LoginButton" [disabled]="loginForm.invalid" (click)="simpleAlert()">login</button>
+                </div>
+            </form>
+        </div>
+        <div id="admin" class="container tab-pane fade"><br>
+            <form [formGroup]="adminForm" (ngSubmit)="adminSubmitted()">
+                <div class="form-Data">
+                    <div class="username-Info">
+                        <span>Username</span>
+                        <input formControlName="email" />
+                        <span class="error-Text"
+                            *ngIf="AdminEmail.errors?.['required'] && (AdminEmail.dirty||AdminEmail.touched)">
+                            username is required
+                        </span>
+                    </div>
+                    <div class="password-Info">
+                        <span>Password</span>
+                        <input type="password" formControlName="password" />
+                        <span class="error-Text"
+                            *ngIf="AdminPassword.errors?.['required'] && (AdminPassword.dirty||AdminPassword.touched)">
+                            password is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="AdminPassword.errors?.['minlength'] || AdminPassword.errors?.['maxlength'] && (AdminPassword.dirty||AdminPassword.touched)">
+                            password is not valid
+                        </span>
+                    </div>
+                    <button class="LoginButton" [disabled]="adminForm.invalid" (click)="simpleAlert()">login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

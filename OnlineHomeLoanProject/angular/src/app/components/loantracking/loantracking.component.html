@@ -1,0 +1,17 @@
+<div class="customer-Header">
+    <div class="logo-Display">
+        <img src="assets/images/OHL.svg" alt="img">
+    </div>
+    <div class="customer-Logout">
+        <span>Hello <span class="customer-Text">{{displayUser}}</span> !</span>
+        <button (click)="logOut()">LOGOUT</button>
+    </div>
+</div>
+<div class="redirect-Text" routerLink="/customerhome">
+    <span>
+        << Back to HomePage </span>
+</div>
+<div class="tracking-Layer">
+    <span class="Heading">Status :</span>
+    <span class="status-Body">Update Message : None (Please apply for loan to check status)</span>
+</div>

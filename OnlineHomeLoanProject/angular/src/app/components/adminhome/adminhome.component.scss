@@ -1,0 +1,39 @@
+.admin-Layout {
+  .admin-Header {
+    background-color: rgb(191, 191, 219);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .logo-Display {
+      width: 20%;
+      height: 80px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .admin-Logout {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      padding-right: 50px;
+      span {
+        font-style: oblique;
+        .admin-Text {
+          font-weight: bold;
+        }
+      }
+      button {
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        font-size: 12px;
+        padding: 4px 12px 4px 12px;
+        background-color: rgb(4, 92, 87);
+        color: rgb(219, 212, 212);
+        font-weight: bold;
+      }
+    }
+  }
+}

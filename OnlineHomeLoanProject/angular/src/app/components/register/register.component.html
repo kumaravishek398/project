@@ -1,0 +1,82 @@
+<div class="userRegister-Layout">
+    <div class="heading-Title">
+        <span>New User Registration</span>
+    </div>
+    <div class="register-Layer">
+        <div class="accountMessage" [ngClass]="isAccountCreated?'text-success pb1' :'text-danger pb1'">
+            {{displayMessage}}
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+            <div class="register-Form">
+                <div class="Name-Data">
+                    <div class="firstName">
+                        <span>First Name</span>
+                        <input formControlName="firstname" />
+                        <span class="error-Text"
+                            *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)">
+                            firstname is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="FirstName.errors?.['pattern'] && (FirstName.touched || FirstName.dirty)">
+                            please enter letters only
+                        </span>
+                    </div>
+                    <div class="lastName">
+                        <span>Last Name</span>
+                        <input formControlName="lastname" />
+                        <span class="error-Text"
+                            *ngIf="LastName.errors?.['required'] && (LastName.touched || LastName.dirty)">
+                            lastname is required
+                        </span>
+                        <span class="error-Text"
+                            *ngIf="LastName.errors?.['pattern'] && (LastName.touched || LastName.dirty)">
+                            please enter letters only
+                        </span>
+                    </div>
+                </div>
+                <div class="signup-Layer">
+                    <span>Email Address</span>
+                    <input formControlName="email" />
+                    <span class="error-Text" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+                        email is required
+                    </span>
+                    <span class="error-Text" *ngIf="Email.errors?.['email'] && (Email.touched || Email.dirty)">
+                        email is not valid
+                    </span>
+                </div>
+                <div class="signup-Layer">
+                    <span>Mobile number</span>
+                    <input formControlName="mobilenumber" maxlength="10" />
+                    <span class="error-Text"
+                        *ngIf="MobileNumber.errors?.['required'] && (MobileNumber.touched || MobileNumber.dirty)">
+                        mobile number is required
+                    </span>
+                    <span class="error-Text"
+                        *ngIf="MobileNumber.errors?.['pattern'] && (MobileNumber.touched || MobileNumber.dirty)">
+                        mobile number is invalid
+                    </span>
+                </div>
+                <div class="signup-Layer">
+                    <span>Password</span>
+                    <input type="password" formControlName="password" />
+                    <span class="error-Text"
+                        *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+                        password is required
+                    </span>
+                    <span class="error-Text"
+                        *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.touched || Password.dirty)">
+                        password should atleast be 6 to 15 characters long
+                    </span>
+                </div>
+                <div class="signup-Layer">
+                    <span>Confirm Password</span>
+                    <input type="password" formControlName="confirmpassword" />
+                    <span class="error-Text" [ngStyle]="{'display':repeatPass}">
+                        password is not matching
+                    </span>
+                </div>
+                <button type="submit" [disabled]="registerForm.invalid" class="Submit-Data">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
